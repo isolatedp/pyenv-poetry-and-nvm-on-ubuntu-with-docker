@@ -1,0 +1,25 @@
+services:
+  dev-playground:
+    container_name: pyenv-nvm-ubuntu
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    stdin_open: true
+    tty: true
+    networks:
+      dockerNet:
+        ipv4_address: "172.18.0.201"
+    ## 宿主機 Port 映射
+    ## 格式 - <host port>:<container port>
+    # ports:
+    # - "4200:4200"
+    ## Docker 網路 Port 映射
+    ## 格式 - <container port>
+    # expose:
+    # - "4200"
+
+# 網路設定
+networks:
+  dockerNet: # 網路名稱
+    external: true # 使用外部網路
