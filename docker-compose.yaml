@@ -10,6 +10,11 @@ services:
     networks:
       dockerNet:
         ipv4_address: "172.18.0.201"
+    environment:
+      - WATCHFILES_FORCE_POLLING=true
+      - WATCHFILES_POLL_INTERVAL=3.0
+      - CHOKIDAR_USEPOLLING=true
+      - CHOKIDAR_INTERVAL=3000
     ## 宿主機 Port 映射
     ## 格式 - <host port>:<container port>
     # ports:

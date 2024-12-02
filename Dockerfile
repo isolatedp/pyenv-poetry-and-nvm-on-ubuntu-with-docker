@@ -14,6 +14,7 @@ ENV LANG=en_US.utf8
 
 RUN echo "done pyhton dep package" && \
     DEBIAN_FRONTEND=noninteractive && \
+    apt-get update && \
     apt-get install -y build-essential --no-install-recommends make \
     ca-certificates \
     git \
